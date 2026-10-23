@@ -11,7 +11,7 @@ class AzureHelp(Star):
         super().__init__(context)
         # 图片路径：插件目录/file/help_page.jpg
         # 不依赖机器人启动时的工作目录
-        self.help_image = Path(__file__).resolve().parent / "file" / "help_page.png"
+        self.help_image = Path(__file__).resolve().parent / "files" / "help_page.png"
 
     @filter.command("help")
     async def help(self, event: AstrMessageEvent):
