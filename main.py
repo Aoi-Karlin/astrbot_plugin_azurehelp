@@ -5,7 +5,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 
 
-@register("azurehelp")
+@register("azurehelp", "your_name", "发送帮助图片", "1.0.0")
 class AzureHelp(Star):
     def __init__(self, context: Context):
         super().__init__(context)
