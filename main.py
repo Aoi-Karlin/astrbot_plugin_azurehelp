@@ -9,7 +9,7 @@ from astrbot.api.star import Context, Star, register
 
 # 插件目录：不依赖机器人启动时的工作目录
 PLUGIN_DIR = Path(__file__).resolve().parent
-FILE_DIR = PLUGIN_DIR / "file"
+FILE_DIR = PLUGIN_DIR / "files"
 HELP_IMAGE = FILE_DIR / "help_page.png"
 TUTORIAL_FILE = FILE_DIR / "tutorial.txt"
 TUTORIAL_URL = "https://azure712.space/bothelp"
