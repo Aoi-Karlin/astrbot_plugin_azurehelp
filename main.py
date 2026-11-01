@@ -50,7 +50,13 @@ def split_text(text: str, limit: int = MAX_NODE_CHARS) -> list[str]:
     return chunks
 
 
-@register("azurehelp")
+@register(
+    "astrbot_plugin_azurehelp",
+    "Azured",
+    "发送帮助图片",
+    "v1.1.0",
+    "https://github.com/Aoi-Karlin/astrbot_plugin_azurehelp",
+)
 class AzureHelp(Star):
     def __init__(self, context: Context):
         super().__init__(context)
