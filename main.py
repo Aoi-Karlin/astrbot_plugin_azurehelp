@@ -9,7 +9,7 @@ from astrbot.api.star import Context, Star, register
 
 # 插件目录：不依赖机器人启动时的工作目录
 PLUGIN_DIR = Path(__file__).resolve().parent
-FILE_DIR = PLUGIN_DIR / "files"
+FILE_DIR = PLUGIN_DIR / "file"
 HELP_IMAGE = FILE_DIR / "help_page.png"
 TUTORIAL_FILE = FILE_DIR / "tutorial.txt"
 TUTORIAL_URL = "https://azure712.space/bothelp"
@@ -21,6 +21,9 @@ MAX_NODE_CHARS = 1500
 
 FALLBACK_TUTORIAL = (
     "📖 Bot 指令手册\n"
+    "· 签到（无前缀）：每天领积分，50 + 10n（n 为天数）\n"
+    "· /抽卡 [1-10]（每抽 10 积分）/ /卡池 / /换池 <序号> / /图鉴\n"
+    "· /获取卡 <卡名> / /抽卡帮助 / /发积分 <数量> [@某人] / /发卡 <卡名> [数量] [@某人]\n"
     "· !接歌词 / !接歌词 search <歌名> / !接歌词 from <歌名> <歌词>\n"
     "· 退出接歌 / 结束接歌 / quit\n"
     "· !点歌 <歌名> / !副歌 <歌名>\n"
@@ -50,13 +53,7 @@ def split_text(text: str, limit: int = MAX_NODE_CHARS) -> list[str]:
     return chunks
 
 
-@register(
-    "astrbot_plugin_azurehelp",
-    "Azured",
-    "发送帮助图片",
-    "v1.1.0",
-    "https://github.com/Aoi-Karlin/astrbot_plugin_azurehelp",
-)
+@register("azurehelp")
 class AzureHelp(Star):
     def __init__(self, context: Context):
         super().__init__(context)
